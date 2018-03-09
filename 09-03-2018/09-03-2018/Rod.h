@@ -16,7 +16,10 @@ class Rod
 public:
 	Rod();
 	Rod(int length, bool isAutomatic, Material rodMataterial, char* name);
+	Rod(const Rod& other);
 	~Rod();
+
+	Rod& operator=(const Rod& other);
 
 	int getLength() const;
 	void setLength(int length);
