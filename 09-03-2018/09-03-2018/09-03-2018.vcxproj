@@ -112,9 +112,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Angler.h" />
+    <ClInclude Include="Fish.h" />
     <ClInclude Include="Rod.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Angler.cpp" />
+    <ClCompile Include="Fish.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rod.cpp" />
   </ItemGroup>

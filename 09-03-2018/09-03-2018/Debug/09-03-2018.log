@@ -1,0 +1,4 @@
+﻿  Rod.cpp
+c:\work\oop\09-03-2018\09-03-2018\rod.cpp(70): warning C4715: 'Rod::operator=': not all control paths return a value
+  09-03-2018.vcxproj -> C:\Work\OOP\09-03-2018\Debug\09-03-2018.exe
+  09-03-2018.vcxproj -> C:\Work\OOP\09-03-2018\Debug\09-03-2018.pdb (Partial PDB)

@@ -2,6 +2,7 @@
 
 #include "Rod.h"
 
+using namespace std;
 
 Rod::Rod()
 {
@@ -67,6 +68,45 @@ Rod& Rod::operator=(const Rod& other)
 		return *this;
 	}
 }
+
+ostream& operator<<(ostream& out, const Rod& rod)
+{
+	out << "This rod is" << rod.m_Length << " cm long" << endl;
+
+	out << "It is made of ";
+	switch (rod.m_RodMaterial)
+	{
+	case Material::Unspecified:
+		out << "unspecified material";
+		break;
+	default:
+		break;
+	}
+
+	out << endl;
+
+	return out;
+}
+
+std::istream& operator>>(std::istream& in, Rod & rod)
+{
+	in >> rod.m_Length;
+
+	int material;
+	in >> material;
+	rod.m_RodMaterial = (Material)material;
+
+	in >> rod.m_IsAutomatic;
+
+	in.ignore(); // this is required since a newline char was input after the bool above.
+				 // This messes up the line below that reads until it gets a newline char
+
+	in.getline(rod.m_Name, rod.MAX_NAME_LENGTH);
+
+	return in;
+}
+
+
 
 int Rod::getLength() const
 {

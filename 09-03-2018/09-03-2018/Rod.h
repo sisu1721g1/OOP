@@ -1,4 +1,6 @@
 #pragma once
+#include<iostream>
+
 enum Material 
 {
 	Unspecified = 0,
@@ -8,6 +10,9 @@ enum Material
 
 class Rod
 {
+private:
+	const int MAX_NAME_LENGTH = 50;
+
 	int m_Length;
 	bool m_IsAutomatic;
 	Material m_RodMaterial;
@@ -20,6 +25,8 @@ public:
 	~Rod();
 
 	Rod& operator=(const Rod& other);
+	friend std::ostream& operator<< (std::ostream& out, const Rod& rod);
+	friend std::istream& operator>> (std::istream& in, Rod& rod);
 
 	int getLength() const;
 	void setLength(int length);
@@ -32,5 +39,7 @@ public:
 
 	char* getName() const;
 	void setName(char* name);
+
+	double getSuccessRate(); //next time we will implement a complex success rate function
 };
 

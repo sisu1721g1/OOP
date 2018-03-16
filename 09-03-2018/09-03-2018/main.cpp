@@ -12,6 +12,10 @@ int main()
 
 	myRod2 = myRod;
 
+	cin >> myRod2;
+
+	cout << myRod2;
+
 	system("pause");
 	return 0;
 }
