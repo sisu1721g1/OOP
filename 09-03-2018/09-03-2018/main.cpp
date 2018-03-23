@@ -1,20 +1,36 @@
 #include<iostream>
 
+#include "Angler.h"
+#include "FishSack.h"
 #include "Rod.h"
 
 using namespace std;
 
+const char EXIT_COMMAND = 'x';
+
 int main()
 {
-	Rod myRod = Rod(4, true, Material::Carbon, "yes baby!");
+	Rod* myRod = new Rod(4, true, Material::Carbon, "Nimbus2000");
+	FishSack* myFishSack = new FishSack();
 
-	Rod myRod2 = Rod();
+	Angler* angler = new Angler(myRod, myFishSack);
+	
+	char input;
 
-	myRod2 = myRod;
+	while (true)
+	{
+		cin >> input;
+		if (input == EXIT_COMMAND)
+		{
+			cout << "Bye, thanks for fishing!";
+			break;
+		}
 
-	cin >> myRod2;
+		angler->fish();
+	}
 
-	cout << myRod2;
+
+	delete angler;
 
 	system("pause");
 	return 0;

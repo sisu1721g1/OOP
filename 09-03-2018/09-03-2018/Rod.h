@@ -4,20 +4,24 @@
 enum Material 
 {
 	Unspecified = 0,
-	Carbon = 1,
-	Wood = 2
+	Wood = 1,
+	Carbon = 2,
 };
 
 class Rod
 {
 private:
 	const int MAX_NAME_LENGTH = 50;
+	const double AUTOMATIC_ROD_BASE_SUCCESS_RATE = 0.25;
+	const double WOOD_ROD_BASE_SUCCESS_RATE = 0.33;
+	const double CARBON_ROD_BASE_SUCCESS_RATE = 0.51;
 
 	int m_Length;
 	bool m_IsAutomatic;
 	Material m_RodMaterial;
 	char* m_Name;
 
+	double getMaterialSuccessRate(Material material);
 public:
 	Rod();
 	Rod(int length, bool isAutomatic, Material rodMataterial, char* name);
@@ -40,6 +44,6 @@ public:
 	char* getName() const;
 	void setName(char* name);
 
-	double getSuccessRate(); //next time we will implement a complex success rate function
+	double getSuccessRate();
 };
 

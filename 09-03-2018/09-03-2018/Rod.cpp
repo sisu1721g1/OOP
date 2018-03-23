@@ -162,3 +162,30 @@ void Rod::setName(char* name)
 	m_Name = new char[newNameLength];
 	strcpy_s(m_Name, newNameLength, name);
 }
+
+double Rod::getSuccessRate()
+{
+	double result = 0;
+
+	if (m_IsAutomatic)
+	{
+		result += AUTOMATIC_ROD_BASE_SUCCESS_RATE;
+	}
+
+	result += getMaterialSuccessRate(m_RodMaterial);
+
+	return result;
+}
+
+double Rod::getMaterialSuccessRate(Material material)
+{
+	switch (material)
+	{
+	case Material::Wood:
+		return WOOD_ROD_BASE_SUCCESS_RATE;
+	case Material::Carbon:
+		return CARBON_ROD_BASE_SUCCESS_RATE;
+	default:
+		return 0;
+	}
+}
