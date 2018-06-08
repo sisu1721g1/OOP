@@ -53,7 +53,8 @@ std::ostream& operator<<(std::ostream& os, const Vehicle& vehicle)
 
 std::ostream& Vehicle::print(std::ostream& os) const
 {
-	os << _model << " " << _year << " " << _manufacturer << " " << _color << std::endl;
+	os << getType() << " ";
+	os << _model << " " << _year << " " << _manufacturer << " " << _color << " ";
 
 	return os;
 }

@@ -10,10 +10,6 @@ Car::Car(int year, VehicleManufacturer manufacturer, Color color, char* model, i
 	_steeringWheelDiameter = steeringWheelDiameter;
 }
 
-Car::~Car()
-{
-}
-
 std::ostream& operator<<(std::ostream& os, const Car& car)
 {
 	car.print(os);
@@ -25,7 +21,7 @@ std::ostream& Car::print(std::ostream& os) const
 {
 	Vehicle::print(os);
 
-	os << _steeringWheelDiameter;
+	os << _steeringWheelDiameter << std::endl;
 
 	return os;
 }

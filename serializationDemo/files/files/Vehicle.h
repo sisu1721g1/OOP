@@ -15,6 +15,11 @@ enum Color
 	Black,
 };
 
+enum VehicleType {
+	CarType = 1,
+	TruckType
+};
+
 class Vehicle
 {
 public:
@@ -36,5 +41,7 @@ private:
 
 	void setModel(char* otherModel);
 	void destroyModel();
+
+	virtual VehicleType getType() const = 0;
 };
 

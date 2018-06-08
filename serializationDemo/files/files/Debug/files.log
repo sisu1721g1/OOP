@@ -1,4 +1,4 @@
 ﻿  main.cpp
-c:\work\oop\filesdemo\files\files\main.cpp(10): warning C4101: 'a': unreferenced local variable
-  files.vcxproj -> C:\Work\OOP\filesDemo\files\Debug\files.exe
-  files.vcxproj -> C:\Work\OOP\filesDemo\files\Debug\files.pdb (Partial PDB)
+c:\work\oop\serializationdemo\files\files\main.cpp(18): warning C4715: 'vehicleFactory': not all control paths return a value
+  files.vcxproj -> C:\Work\OOP\serializationDemo\files\Debug\files.exe
+  files.vcxproj -> C:\Work\OOP\serializationDemo\files\Debug\files.pdb (Partial PDB)
